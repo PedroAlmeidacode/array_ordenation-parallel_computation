@@ -1,0 +1,20 @@
+carregar para memoria
+
+criacao de n filhos 
+
+carregar todo o array de numeros em memroria 
+
+dividir o array em n filhos
+
+
+3) cada processo escreve a sequencia para um pipe
+recolhe n sequencias ordenadas
+e o pai faz o merge dos arrays 
+
+
+comunicacao emtre processos
+
+pipe unico 
+
+apenas o pai le do pipe e todos os filhos escrevem para o pipe
+o pai cria todos os filhos e todos herdam o pipe
