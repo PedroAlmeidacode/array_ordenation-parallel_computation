@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o  -o array_ordenation_parallel_computation 
+/usr/bin/cc -g   CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o  -o array_ordenation_parallel_computation 

@@ -44,10 +44,10 @@ RM = /snap/clion/107/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/CLionProjects/array_ordenation-parallel_computation
+CMAKE_SOURCE_DIR = /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug
+CMAKE_BINARY_DIR = /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ preinstall:
 CMakeFiles/array_ordenation_parallel_computation.dir/all:
 	$(MAKE) -f CMakeFiles/array_ordenation_parallel_computation.dir/build.make CMakeFiles/array_ordenation_parallel_computation.dir/depend
 	$(MAKE) -f CMakeFiles/array_ordenation_parallel_computation.dir/build.make CMakeFiles/array_ordenation_parallel_computation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target array_ordenation_parallel_computation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target array_ordenation_parallel_computation"
 .PHONY : CMakeFiles/array_ordenation_parallel_computation.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/array_ordenation_parallel_computation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/array_ordenation_parallel_computation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/array_ordenation_parallel_computation.dir/rule
 
 # Convenience name for target.

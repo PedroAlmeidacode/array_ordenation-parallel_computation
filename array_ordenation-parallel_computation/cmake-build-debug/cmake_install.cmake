@@ -1,4 +1,4 @@
-# Install script for directory: /home/pedro/CLionProjects/array_ordenation-parallel_computation
+# Install script for directory: /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

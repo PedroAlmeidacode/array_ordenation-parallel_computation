@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o"
   "CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o"
   "array_ordenation_parallel_computation"
   "array_ordenation_parallel_computation.pdb"

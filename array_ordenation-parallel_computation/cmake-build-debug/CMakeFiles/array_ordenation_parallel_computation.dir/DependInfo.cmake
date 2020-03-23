@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pedro/CLionProjects/array_ordenation-parallel_computation/main.c" "/home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o"
+  "/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/lib_util.c" "/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o"
+  "/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/main.c" "/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

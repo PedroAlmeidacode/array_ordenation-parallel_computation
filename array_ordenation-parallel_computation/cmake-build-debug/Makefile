@@ -48,10 +48,10 @@ RM = /snap/clion/107/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pedro/CLionProjects/array_ordenation-parallel_computation
+CMAKE_SOURCE_DIR = /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug
+CMAKE_BINARY_DIR = /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/CLionProjects/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ array_ordenation_parallel_computation/fast:
 	$(MAKE) -f CMakeFiles/array_ordenation_parallel_computation.dir/build.make CMakeFiles/array_ordenation_parallel_computation.dir/build
 .PHONY : array_ordenation_parallel_computation/fast
 
+lib_util.o: lib_util.c.o
+
+.PHONY : lib_util.o
+
+# target to build an object file
+lib_util.c.o:
+	$(MAKE) -f CMakeFiles/array_ordenation_parallel_computation.dir/build.make CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o
+.PHONY : lib_util.c.o
+
+lib_util.i: lib_util.c.i
+
+.PHONY : lib_util.i
+
+# target to preprocess a source file
+lib_util.c.i:
+	$(MAKE) -f CMakeFiles/array_ordenation_parallel_computation.dir/build.make CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.i
+.PHONY : lib_util.c.i
+
+lib_util.s: lib_util.c.s
+
+.PHONY : lib_util.s
+
+# target to generate assembly for a file
+lib_util.c.s:
+	$(MAKE) -f CMakeFiles/array_ordenation_parallel_computation.dir/build.make CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.s
+.PHONY : lib_util.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... array_ordenation_parallel_computation"
 	@echo "... edit_cache"
+	@echo "... lib_util.o"
+	@echo "... lib_util.i"
+	@echo "... lib_util.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
