@@ -33,7 +33,7 @@ int gettimeuseconds(long long *time_usec) {
     return 0;
 }
 
-#endif
+
 
 /** 
   @brief gera um inteiro aleatoriamente/uniformemente no intervalo: val_min...val_max 
@@ -67,9 +67,18 @@ void freeIntArray(int *v) {
 }
 
 int numberOfBlocksToDivideArray(int N){
-    return (int) N / 4;
+    return (int) N / INTS_PER_BLOCK;
 }
 
+
+int number_of_process_created(int N){
+    int a = N;
+    while(N != 1){
+        N = N / 2;
+        a = a + N;
+    }
+    return  a;
+}
 
 void printArray(int *a, int N) {
     int i;
@@ -130,3 +139,4 @@ void mergesort_run(int *a, int n , int lo, int hi) {
     mergesort_recursivo(a, aux, lo, hi);
     free(aux);
 }
+#endif

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/library.h
+time.h
+-
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+fcntl.h
+-
+errno.h
+-
+string.h
+-
+sys/wait.h
+-
+stdio.h
+-
+stdlib.h
+-
+sys/time.h
+-
+
+/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/main.c
+library.h
+/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/library.h
+
