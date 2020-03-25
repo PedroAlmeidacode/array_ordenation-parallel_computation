@@ -15,7 +15,7 @@
 #include <sys/time.h>
 
 
-#define N_MAX 200
+#define N_MAX 999
 #define INTS_PER_BLOCK 4
 
 void mergesort_run(int *a, int n , int lo, int hi);

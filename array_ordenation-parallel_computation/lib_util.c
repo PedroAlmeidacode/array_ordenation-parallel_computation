@@ -67,7 +67,12 @@ void freeIntArray(int *v) {
 }
 
 int numberOfBlocksToDivideArray(int N){
-    return (int) N / INTS_PER_BLOCK;
+    //se o numeros nao chegar ao numero minimo de inteiros por bloco apenas tera um bloco
+    if(N <= INTS_PER_BLOCK)return 1;
+    // se a divisao nao der resto quer dizer que é uma divisao perfeita e todos os blocos terao o mesmo numero de inteiros
+    if((N % INTS_PER_BLOCK) == 0)return (int) N / INTS_PER_BLOCK;
+    // se der resto diferente de 0 quer dizer que tem de ser feito mais um bloco com um numero de inteiros diferente dos outros blocos
+    return ((int) (N / INTS_PER_BLOCK)) + 1;
 }
 
 
