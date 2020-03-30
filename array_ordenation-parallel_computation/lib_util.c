@@ -261,7 +261,7 @@ char * create_protocol(int index_end,int index_start,int pid, int * sub_sequenci
 
 int * get_data_from_protocol(int * sub_seq_index_start, int * sub_seq_index_end, int *childpid, char * buffer, int * size_of_subsequencia) {
 
-    char delimiter[] = "#*;|";
+    char delimiter[] = "#*;";
     char *message = strtok(buffer, delimiter);
     int i = 0;
     while (i < 4) {

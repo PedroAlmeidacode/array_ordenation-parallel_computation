@@ -18,7 +18,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_util.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_util.o" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
@@ -54,6 +53,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,6 +83,7 @@
       <workItem from="1585087118891" duration="8187000" />
       <workItem from="1585310012275" duration="12162000" />
       <workItem from="1585408591889" duration="7322000" />
+      <workItem from="1585432290301" duration="17422000" />
     </task>
     <servers />
   </component>
@@ -98,53 +99,61 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1786" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1584712390794" />
-    <state width="1152" height="340" key="GridCell.Tab.0.bottom" timestamp="1585424820376">
+    <state width="1152" height="236" key="GridCell.Tab.0.bottom" timestamp="1585509295360">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.0.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.0.center" timestamp="1585424820376">
+    <state width="1152" height="236" key="GridCell.Tab.0.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295360" />
+    <state width="1152" height="236" key="GridCell.Tab.0.center" timestamp="1585509295360">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.0.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.0.left" timestamp="1585424820376">
+    <state width="1152" height="236" key="GridCell.Tab.0.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295360" />
+    <state width="1152" height="236" key="GridCell.Tab.0.left" timestamp="1585509295360">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.0.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.0.right" timestamp="1585424820376">
+    <state width="1152" height="236" key="GridCell.Tab.0.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295360" />
+    <state width="1152" height="236" key="GridCell.Tab.0.right" timestamp="1585509295360">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.0.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.1.bottom" timestamp="1585424820376">
+    <state width="1152" height="236" key="GridCell.Tab.0.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295360" />
+    <state width="1152" height="340" key="GridCell.Tab.1.bottom" timestamp="1585509295351">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.1.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.1.center" timestamp="1585424820376">
+    <state width="1152" height="340" key="GridCell.Tab.1.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295351" />
+    <state width="1152" height="340" key="GridCell.Tab.1.center" timestamp="1585509295351">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.1.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.1.left" timestamp="1585424820376">
+    <state width="1152" height="340" key="GridCell.Tab.1.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295351" />
+    <state width="1152" height="340" key="GridCell.Tab.1.left" timestamp="1585509295351">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.1.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state width="1152" height="340" key="GridCell.Tab.1.right" timestamp="1585424820376">
+    <state width="1152" height="340" key="GridCell.Tab.1.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295351" />
+    <state width="1152" height="340" key="GridCell.Tab.1.right" timestamp="1585509295351">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state width="1152" height="340" key="GridCell.Tab.1.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585424820376" />
-    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585408594073">
+    <state width="1152" height="340" key="GridCell.Tab.1.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585509295351" />
+    <state x="1447" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1585434061834">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585408594073" />
+    <state x="1447" y="188" width="1022" height="737" key="SettingsEditor/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585434061834" />
+    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585432291327">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585432291327" />
     <state x="1717" y="197" width="563" height="720" key="refactoring.ChangeSignatureDialog" timestamp="1585004706310">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1717" y="197" width="563" height="720" key="refactoring.ChangeSignatureDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585004706310" />
+    <state x="1621" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1585493845000">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="1621" y="259" width="672" height="678" key="search.everywhere.popup/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585493845000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>7</line>
+          <line>8</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
