@@ -1,5 +1,7 @@
 #include "library.h"
 
+
+
 int get_index_end(int index_start, int ints_per_block, int n_blocks, int ints_in_last_block, int n_sequencia, int i) {
     //se estiver no ultimo filho que reorganiza todos o array
     if (n_blocks == 1) {
@@ -157,7 +159,8 @@ void mergesort_run(int *a, int n, int lo, int hi) {
 }
 
 void handler() {
-    printf("subsequencia ordenada");
+    childs_that_have_sent_protocol++;
+    printf("subsequencia ordenada\n");
 }
 
 
@@ -225,24 +228,28 @@ ssize_t writen(int fd, const void *ptr, size_t n)
     return(n - nleft);
 }
 
+
 char * create_protocol(int index_end,int index_start,int pid, int * sub_sequencia, int * size_protocol){
     int size_sub_array = index_end - index_start +1 ; //tamanho array
     int size_aux = size_sub_array + (size_sub_array-1);
     char aux[BUF_SIZE];
-    int k =0, s =0;
+    int k =0, s =0, i=0;
     while(k < size_sub_array) {
         int j =0;
-        if((sub_sequencia[k] / 10) > 0 ){//inteiros de dois digitos
-            size_aux++, j++;
-        }
         if((sub_sequencia[k] / 100) > 0 ){ //inteiros de 3 digitos
-            size_aux+=2, j+=2;
+            size_aux+=2, j+=2, i++;
+        }
+        else if((sub_sequencia[k] / 10) > 0 ){//inteiros de dois digitos
+            size_aux++, j++;
         }
 
         sprintf(&aux[k+s], "%d", sub_sequencia[k]);
         if(k+s+j+1 != size_aux) aux[k+s+j+1] = ',';
+
         s++,k++;
         if(j!=0)s++;
+        if(i==1)s++;
+        i=0;
     }
     char auxx[size_aux];
     strcpy(auxx,aux);
@@ -263,33 +270,39 @@ int * get_data_from_protocol(int * sub_seq_index_start, int * sub_seq_index_end,
 
     char delimiter[] = "#*;";
     char *message = strtok(buffer, delimiter);
-    int i = 0;
-    while (i < 4) {
-        if (i == 0)*childpid = atoi(message);
-        if (i == 1)*sub_seq_index_start = atoi(message);
-        if (i == 2) *sub_seq_index_end = atoi(message);
-        if (i == 3) {
-            int n = 0;
-            char *sub = strtok(message, ",");
-            int a[BUF_SIZE];
-            while (n >= 0) {
-                if (sub == NULL) {
-                    *size_of_subsequencia = n;
-                    int *sub_sequencia = newIntArray(n);
-                    for (int k = 0; k < n; k++) {
-                        sub_sequencia[k] = a[k];
+
+        int i = 0;
+        while (i < 4) {
+            if (message != NULL) {
+                if (i == 0)*childpid = atoi(message);
+                if (i == 1)*sub_seq_index_start = atoi(message);
+                if (i == 2) *sub_seq_index_end = atoi(message);
+                if (i == 3) {
+                    int n = 0;
+                    char *sub = strtok(message, ",");
+                    int a[BUF_SIZE];
+                    while (n >= 0) {
+                        if (sub == NULL) {
+                            *size_of_subsequencia = n;
+                            int *sub_sequencia = newIntArray(n);
+                            for (int k = 0; k < n; k++) {
+                                sub_sequencia[k] = a[k];
+                            }
+                            return sub_sequencia;
+                        }
+                        a[n] = atoi(sub);
+                        n++;
+                        sub = strtok(NULL, ",");
                     }
-                    return sub_sequencia;
                 }
-                a[n] = atoi(sub);
-                n++;
-                sub = strtok(NULL, ",");
+                message = strtok(NULL, delimiter);
+                i++;
             }
         }
-        message = strtok(NULL, delimiter);
-        i++;
+    return NULL;
     }
-}
+
+
 
 
     int * new_int_array_substituition_exact_size(int new_size, int * old_function, int to_free_put_one){
@@ -310,7 +323,6 @@ int * create_sub_array_from_array(const int * array, int start, int end, int new
     }
     return sub;
 }
-
 
 
 #endif

@@ -20,6 +20,10 @@
 #define MIN_INTS_PER_BLOCK 2
 #define BUF_SIZE 200
 
+long long time_usec_init;
+long long time_usec_end1;
+long long time_usec_end2;
+
 int get_ints_per_block(int n_sequencia);
 void mergesort_run(int *a, int n , int lo, int hi);
 void merge_array(int *a, int *aux, int lo, int mid, int hi);
@@ -46,6 +50,7 @@ int * create_sub_array_from_array(const int * array, int start, int end, int new
 int * get_data_from_protocol(int * sub_seq_index_start, int * sub_seq_index_end, int *childpid, char * buffer, int * size_of_subsequencia);
 
 
+int childs_that_have_sent_protocol;     // handler os sigusr1 increases this integer ,if the protocol has been readed the father does (-1)
 
 
 #ifndef ARRAY_ORDENATION_PARALLEL_COMPUTATION_LIBRARY_H
