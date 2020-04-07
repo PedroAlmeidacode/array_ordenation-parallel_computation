@@ -12,17 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff37baf4-f559-40ed-b4d7-bdc60607a874" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_util.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_util.o" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/library.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../file.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +62,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="array_ordenation_parallel_computation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="array_ordenation_parallel_computation" TARGET_NAME="array_ordenation_parallel_computation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="array_ordenation_parallel_computation" RUN_TARGET_NAME="array_ordenation_parallel_computation">
+    <configuration name="array_ordenation_parallel_computation" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/.." PASS_PARENT_ENVS_2="true" PROJECT_NAME="array_ordenation_parallel_computation" TARGET_NAME="array_ordenation_parallel_computation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="array_ordenation_parallel_computation" RUN_TARGET_NAME="array_ordenation_parallel_computation">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -93,6 +90,9 @@
       <workItem from="1585657491999" duration="9492000" />
       <workItem from="1585677397823" duration="13096000" />
       <workItem from="1585762381169" duration="12239000" />
+      <workItem from="1585844030340" duration="7354000" />
+      <workItem from="1585948318358" duration="3496000" />
+      <workItem from="1586181136993" duration="19374000" />
     </task>
     <servers />
   </component>
@@ -100,6 +100,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1319" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586182330938">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="1319" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586182330938" />
     <state x="696" y="409" width="518" height="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585683730234">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -112,10 +116,10 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1459" y="127" width="998" height="853" key="DiffContextDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585313908670" />
-    <state x="1786" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1584712390794">
+    <state x="1786" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1586182329704">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state x="1786" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1584712390794" />
+    <state x="1786" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586182329704" />
     <state width="1874" height="340" key="GridCell.Tab.-1.bottom" timestamp="1585697084812">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -132,26 +136,26 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.-1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1585697084807" />
-    <state width="2514" height="340" key="GridCell.Tab.0.bottom" timestamp="1585789517001">
+    <state width="1332" height="340" key="GridCell.Tab.0.bottom" timestamp="1586278308405">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763178" />
-    <state width="2514" height="340" key="GridCell.Tab.0.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585789517001" />
-    <state width="2514" height="340" key="GridCell.Tab.0.center" timestamp="1585789517001">
+    <state width="1332" height="340" key="GridCell.Tab.0.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586278308405" />
+    <state width="1332" height="340" key="GridCell.Tab.0.center" timestamp="1586278308405">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763177" />
-    <state width="2514" height="340" key="GridCell.Tab.0.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585789517001" />
-    <state width="2514" height="340" key="GridCell.Tab.0.left" timestamp="1585789517001">
+    <state width="1332" height="340" key="GridCell.Tab.0.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586278308405" />
+    <state width="1332" height="340" key="GridCell.Tab.0.left" timestamp="1586278308405">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763176" />
-    <state width="2514" height="340" key="GridCell.Tab.0.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585789517001" />
-    <state width="2514" height="340" key="GridCell.Tab.0.right" timestamp="1585789517001">
+    <state width="1332" height="340" key="GridCell.Tab.0.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586278308405" />
+    <state width="1332" height="340" key="GridCell.Tab.0.right" timestamp="1586278308405">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763177" />
-    <state width="2514" height="340" key="GridCell.Tab.0.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585789517001" />
+    <state width="1332" height="340" key="GridCell.Tab.0.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586278308405" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585697079606">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -180,21 +184,35 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="599" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1585675265378" />
-    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585762382084">
+    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1586181138109">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1232" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1585657493037" />
-    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585762382084" />
+    <state x="1659" y="381" key="com.intellij.ide.util.TipDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586181138109" />
     <state x="1717" y="197" width="563" height="720" key="refactoring.ChangeSignatureDialog" timestamp="1585004706310">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1717" y="197" width="563" height="720" key="refactoring.ChangeSignatureDialog/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585004706310" />
-    <state x="1621" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1585493845000">
+    <state x="1621" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1586183223556">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
-    <state x="1621" y="259" width="672" height="678" key="search.everywhere.popup/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1585493845000" />
+    <state x="1621" y="259" width="672" height="678" key="search.everywhere.popup/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586183223556" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>186</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="fd" />

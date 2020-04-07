@@ -1,17 +1,13 @@
 #include "library.h"
 
 
-
+//126,14,10,6,146,9
 int get_index_end(int index_start, int ints_per_block, int n_blocks, int ints_in_last_block, int n_sequencia, int i) {
     //se estiver no ultimo filho que reorganiza todos o array
-    if (n_blocks == 1) {
-        return n_sequencia - 1;
-    }
+    if (n_blocks == 1) return n_sequencia - 1;
     //se estiver no ultimo bloco e nao na ultima child lancada
-    if (i + 1 == n_blocks && ints_in_last_block != 0) {
+    if (i + 1 == n_blocks) return index_start + ints_per_block + (ints_in_last_block - 1);
 
-        return index_start + (ints_in_last_block - 1);
-    }
     return index_start + (ints_per_block - 1);
 }
 
@@ -99,7 +95,7 @@ int number_of_process_created(int N) {
 
 void printArray(int *a, int N, char string[]) {
     int i;
-    printf("Sequencia %s:\n", string);
+    printf("\nSequencia %s:\n", string);
     for (i = 0; i < N; i++) {
         printf("%d ", a[i]);
     }
@@ -160,30 +156,11 @@ void mergesort_run(int *a, int n, int lo, int hi) {
 
 void handler() {
     childs_that_have_sent_protocol++;
-    printf("subsequencia ordenada\n");
+    //printf("SIGUSR1: %d subsequencia ordenada\n",childs_that_have_sent_protocol);
 }
 
 
-int get_ints_per_block(int n_sequencia) {
 
-    int min = MIN_INTS_PER_BLOCK;
-    int max = MAX_INTS_PER_BLOCK;
-    if (n_sequencia > 100) { //se o array for muito grande evito que faca sublocos de 2 inteiros
-        min = 10;
-        max = 20;
-    }
-    int predefined = max;
-    while (predefined != min) {
-        if (n_sequencia % predefined == 0)
-            return predefined;
-        predefined--;
-    }
-    //se o numero de inteiros no array fr menor ou igual ao numero estipulado o bloco tera o numero de inteiros do array
-    if (n_sequencia <= MAX_INTS_PER_BLOCK) {
-        return n_sequencia;
-    }
-    return max; // signifa que nao tem um dividor perfeito retorna o numero estipulado
-}
 
 
 ssize_t readn(int fd, void *ptr, size_t n)
@@ -229,7 +206,7 @@ ssize_t writen(int fd, const void *ptr, size_t n)
 }
 
 
-char * create_protocol(int index_end,int index_start,int pid, int * sub_sequencia, int * size_protocol){
+char * create_protocol(int index_end,int index_start,int pid, int * sub_sequencia){
     int size_sub_array = index_end - index_start +1 ; //tamanho array
     int size_aux = size_sub_array + (size_sub_array-1);
     char aux[BUF_SIZE];
@@ -258,7 +235,6 @@ char * create_protocol(int index_end,int index_start,int pid, int * sub_sequenci
     sprintf(protocol,"#%d*%d;%d*%s|",pid,index_start,index_end,auxx);
     int size = 0;
     while(protocol[size] != '|')size++;
-    *size_protocol = size+1;
     char *a = (char *) malloc(size + 1); // incluindo o '|'
     strcpy(a,protocol);
     return a;
@@ -291,6 +267,8 @@ int * get_data_from_protocol(int * sub_seq_index_start, int * sub_seq_index_end,
                             return sub_sequencia;
                         }
                         a[n] = atoi(sub);
+                        // corrigir digitos recebidos que tenham mais que 3 algarismos, retira o ultimo algarismo que devera ser um erro
+                        while(a[n] / 1000 > 0 ) a[n] = a[n]/10; //ex. "841|"-> foi lido para 8411 transformado de volta a 841
                         n++;
                         sub = strtok(NULL, ",");
                     }
