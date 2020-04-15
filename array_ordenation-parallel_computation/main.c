@@ -24,17 +24,18 @@ int main(int argc, char *argv[]) {
     int n_blocks = N_CHILDS;    /*define numero de blocos a dividir array inicial, numeros de filhos a lancar para primeira operação*/
     int n_childs = number_of_process_created(n_blocks);
     int ints_per_block = n_sequencia / n_blocks;
-    int ints_in_last_block = n_sequencia % ints_per_block;    /*contem o numero de inteiros no ultimo bloco do array*/
+    int rest_of_ints= n_sequencia % ints_per_block;    /*contem o numero de inteiros no ultimo bloco do array*/
+    int n_protocols = get_number_of_protocols(ints_per_block,rest_of_ints,n_sequencia);
 
-    //cobre o caso de haver um bloco apenas com 1 numero
-    if (ints_in_last_block == 1) {
-        ints_in_last_block = ints_per_block + 1; //junta o numero ao boco anterior
-        n_blocks--; //retira o bloco anterior
-    }
+
 
     printf("PARENT PROCESS : array with %d integers, total of %d childs will be launched", n_sequencia, n_childs);
-    char **protocols = (char **) malloc(n_childs *
-                                        sizeof(char *)); // guardara n_childs protocolos que sao as menagens que o pai vai receber de cada um dos filhos
+
+    char **protocols = (char **) malloc(n_protocols * sizeof(char *)); // guardara n_childs protocolos que sao as menagens que o pai vai receber de cada um dos filhos
+    char extra [n_childs][2048];
+    int extra_sizes[n_childs];
+    int i_extra =0; //ietra as as mensagens extra lidas no pai , enviadas do filho quando o protocolo inicial é dividido em mais um envio
+
     int *sequencia = new_int_array_substituition_exact_size(n_sequencia, sequencia_test,
                                                             1); //inicializa array seqeuncia com o seu tamnho exato
 
@@ -58,6 +59,9 @@ int main(int argc, char *argv[]) {
  filhos/blocos é recalculado */
     while (1) {
         int i = 0, index_start = 0, index_end = -1;
+        int plus = 0;
+        //preserva o estado dos bounds pois casos a subsequencia seja subdividida para poder ser escrita para o pipe as variaveis bound vao ser alteradas
+        int index_start_duplicate=0,index_end_duplicate=0;
         childs_that_have_sent_protocol = 0;
         /* Descritor de ficheiros para as duas pontas do pipe*/
         int fd[2];
@@ -67,14 +71,15 @@ int main(int argc, char *argv[]) {
             exit(1);
         }
 
-        printf("PARENT PROCESS: launching %d childs\tints per block : %d\t ints in last block : %d\n", n_blocks,
-               ints_per_block, ints_in_last_block);
+        printf("PARENT PROCESS: launching %d childs\tints per block : %d\t rest of ints: %d\n", n_blocks,
+               ints_per_block, rest_of_ints);
 
         /*itera as vezes correspondentes ao numero de
         blocos que o array foi dividido*/
         while (i < n_blocks) {
             index_start = index_end + 1;
-            index_end = get_index_end(index_start, ints_per_block, n_blocks, ints_in_last_block, n_sequencia, i);
+            index_end = get_index_end(index_start, ints_per_block, n_blocks, rest_of_ints, n_sequencia, i);
+            plus = index_start;
 
             //criar filhos
             if ((pids[n_pids] = fork()) == -1) {
@@ -95,29 +100,82 @@ int main(int argc, char *argv[]) {
                 }
 
 
-                int *sub_sequencia = create_sub_array_from_array(sequencia, index_start, index_end,index_end - index_start + 1);
+                int *sub_sequencia = create_sub_array_from_array(sequencia, index_start, index_end,
+                                                                 index_end - index_start + 1);
                 //ordena sub-array
                 mergesort_run(sub_sequencia, index_end - index_start + 1, 0, index_end - index_start);
-                char *protocol = create_protocol(index_end, index_start, getpid(),sub_sequencia); // cria o protocolo e coloca o dentro do apontador
+
+
+
+                /* escrever subsequencia para ficheiro*/
+                char filename[n_pids >= 10 ? 6 : 5];
+                sprintf(filename,"subsequencias/%d.txt",n_pids);
+                open(filename,O_WRONLY|O_CREAT|O_TRUNC,0644);
+                writeInts(filename, sub_sequencia, index_end-index_start+1);
+
+
+                int index_start_sub = 0;
+                int index_end_sub = index_end - index_start;
+                int size_sub = index_end - index_start + 1;
+                int end = index_end;
+                int n_protocolos_for_sub_sequencia = 1;
+                //se o tamamho da subsequencia for maior do que o suposto tera de se
+                // dividir a sequencia, a ser enviada em varios protocolos
+                if (index_end - index_start + 1 > MAX_SIZE_SUB) {
+                    end= index_end_sub;
+                    n_protocolos_for_sub_sequencia = (int) ((index_end - index_start + 1) / MAX_SIZE_SUB) + 1;
+                    index_end_sub = MAX_SIZE_SUB - 1;
+                    size_sub = MAX_SIZE_SUB;
+                }
+
+
+                int pid = getpid();
+                //ciclo iterara se o numeros de protocolos a criar para a mesma subsequencia
+                //for maior do que 1, no caso de o tamanho da subsequencia ultrapassar os limites do pipe
+                for (int k = 0; k < n_protocolos_for_sub_sequencia ; k++) {
+
+
+                    //no caso de ser a ultima iteracao o index_end sera igual ao index_end original
+                    if (k == n_protocolos_for_sub_sequencia - 1) index_end_sub = end;
+
+                    //passa o pedaco da subsequecia para um array
+                    int *sub = create_sub_array_from_array(sub_sequencia, index_start_sub, index_end_sub,
+                                                           size_sub);
+
+                    char *protocol = create_protocol(plus+index_end_sub, plus+index_start_sub, pid,
+                                                     sub); // cria o protocolo e coloca o dentro do apontador
+
+                    freeIntArray(sub);
+                    sub = NULL;
+
+                    printf("\nCHILD PROCESS [sub_sequencia %d, parte %d]:\t pid : %d \t ppid: %d\t index_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size:%lu size sub_sequencia:%d]->",
+                           i + 1, k + 1, pid, getppid(),plus+ index_start_sub, plus+index_end_sub, size_sub ,
+                           strlen(protocol), index_end_sub - index_start_sub + 1);
+                    for (int j = 0; j < strlen(protocol); j++) {
+                        printf("%c", *(protocol + j));
+                    }
+                    printf("\n");
+
+
+
+
+                    if (writen(fd[1], protocol, strlen(protocol)) == -1) {
+                        perror("CHILD PROCESS: writting to pipe");
+                        exit(EXIT_FAILURE);
+                    }
+
+                    //free(protocol);//liberta mmeoria nao necessaria
+                    //protocol = NULL;
+
+
+                    index_start_sub = index_end_sub + 1;
+                    index_end_sub = index_start_sub + MAX_SIZE_SUB - 1;
+
+                }
+
+
                 freeIntArray(sub_sequencia);//liberta memoria nao necessaria
-
-
-                printf("\nCHILD PROCESS [sub_sequencia %d]:\t pid : %d \t ppid: %d\t index_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size:%lu]->",
-                       i + 1, getpid(), getppid(), index_start, index_end, index_end - index_start + 1,
-                       strlen(protocol));
-                for (int j = 0; j < strlen(protocol); j++) {
-                    printf("%c", *(protocol + j));
-                }
-                printf("\n");
-
-
-                if (writen(fd[1], protocol, strlen(protocol)) == -1) {
-                    perror("CHILD PROCESS: writting to pipe");
-                    exit(EXIT_FAILURE);
-                }
-
-
-                free(protocol);//liberta mmeoria nao necessaria
+                sub_sequencia=NULL;
 
 
                 if ((close(fd[1])) < 0) {
@@ -125,19 +183,13 @@ int main(int argc, char *argv[]) {
                     exit(EXIT_FAILURE);
                 }
 
-                /* escrever subsequencia para ficheiro*/
-                //fd[n_pids]=open("subsquencia.txt",O_WRONLY|O_CREAT|O_TRUNC,0644);
-                //write(fd_sub_seq[n_pids],buf,index_end - index_start +1);
-
-
                 kill(getppid(), SIGUSR1); // enviar sinal SIGUSR1
                 exit(EXIT_SUCCESS);
             }
+
             i++; //itera block number por cada divisao da sequencia
             n_pids++; //itera numero de child lanacada
         }
-
-
 
         /*__________________________________________________________________
         *_______________________PROCESSO_PAI________________________________
@@ -150,43 +202,93 @@ int main(int argc, char *argv[]) {
         char buf[4096];
         int start = 0, end = 0, childpid = 0, size_of_sub_sequencia = 0;
         int t = 0;
+
         //le protocolo do pipe dos filhos que terminarem
-        while (readn(fd[0], buf, 4096) != 0) {
+        while (readn(fd[0], buf, 4096) > 0) {
             t = 0;
+
             char *message = strtok(buf, "|"); // retira um protocolo de buff
             //retira protocolos para um array 2d
             while (message != NULL) {
-                *(protocols + i_protocol) = (char *) malloc(strlen(message) * sizeof(char));
-                strcpy(*(protocols + i_protocol), message);
-                message = strtok(NULL, "|");
-                t++;
-                i_protocol++;
+
+                if(message[0] == '#'){
+                    *(protocols + i_protocol) = (char *) malloc(strlen(message));
+                    strcpy(*(protocols + i_protocol), message);
+                    message = strtok(NULL, "|");
+                    t++;
+                    i_protocol++;
+                    printf("protocolo lido\n");
+                }else {
+                    printf("\033[0;34m");
+                    printf("Recebido porcao de protocolo perdida\n");
+                    printf("%s",message);
+                    printf("\033[0m\n");
+                    sleep(1);
+
+
+                    message = strtok(NULL, "|"); //em caso de lixo passado pelo pipe
+                }
             }
-            //descodifica cada um dos protocolos
-            int max = i_protocol; //max indice in protocols pointer
-            if (t > n_blocks) max = i_protocol - (t -n_blocks); // se tiver lido mais vezes do pipe do que devia a iteracao do loop sera feita n_block vezes
-            for (int j = i_protocol - t; j < max; j++) {
-                int *sub = get_data_from_protocol(&start, &end, &childpid, *(protocols + j),
-                                                  &size_of_sub_sequencia);
-                if (childpid > last_pid) { // para verificar que nao esta a receber nenhum processo da iteracao anterior
-                    printf("PARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d  ",
-                           start, end, childpid);
+
+
+
+
+            for (int j = i_protocol - t; j < i_protocol; j++) {
+
+
+                int *sub = get_data_from_protocol(&start, &end, &childpid, *(protocols + j),&size_of_sub_sequencia);
+                // se o protocolo extraido nao contiver o tamahho e conteudo suposto é necessario complementar com uma sequencia recebida nao enderessada por pid
+                if(size_of_sub_sequencia< end-start+1){
+                    //se o protocolo nao for os suposto ou nao estiver completo nao o colocamos no sitio
+                    // podendo assim remediar o problema desde que esta nao seja a ultima divisao da seuquencia
+
+                        printf("\033[0;34m");
+                        printf("protocolo [pid: %d] {%d-%d}; recebeu %d inteiros , perdeu %d inteiros\n", (int) childpid,start ,end,size_of_sub_sequencia,(end-start+1)-size_of_sub_sequencia );
+                        printf("index_start : %d, index_end: %d, child_pid: %d ,size received = %d, size_sended : %d",
+                           start, end, childpid, size_of_sub_sequencia, end - start + 1);
+                        printArray(sub, size_of_sub_sequencia, "");
+                        printf("\033[0m");
+                        sleep(1);
+                }
+                else {// se o tamanho da sequencia for o esperado colocamos a sequencia no sitio
+                    printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
+                           start, end, childpid, size_of_sub_sequencia, end - start + 1);
                     printArray(sub, size_of_sub_sequencia, "");
+
                     int index_sub = 0;
                     for (int b = start; b <= end; b++) { // coloca sub sequencia ordenada na sequencia original
                         sequencia[b] = sub[index_sub];
                         index_sub++;
-
                     }
                     free(sub);
                 }
             }
         }
 
-        last_pid = childpid;
+
+
+
+
+
+
+
+
+
 
 
         if ((close(fd[0])) < 0)perror("PARENT PROCESS: closing reading from pipe descriptor in parent process");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         for (int j = 0; j < n_blocks; j++) {
@@ -206,20 +308,53 @@ int main(int argc, char *argv[]) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
         /*se tiver 1 na variavel n_blocks neste ponto do codigo significa
         que o array esta organizado */
         if (n_blocks == 1) {
-            free((protocols));
+            if(protocols!=NULL)free((protocols));
+
             printArray(sequencia, n_sequencia, "ordenada");
             /*escreve sequencia para o ficheiro*/
-            /*if (writeInts(path, sequencia, n_sequencia) < 0) {
+            open("ordered.txt",O_WRONLY|O_CREAT|O_TRUNC,0644);
+            if (writeInts("ordered.txt", sequencia, n_sequencia) < 0) {
                 perror("PARENT PROCESS: Reading file");
                 exit(EXIT_FAILURE);
-            }*/
+            }
             exit(EXIT_SUCCESS);
         }
 
         printArray(sequencia, n_sequencia, "\nordenada");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -230,7 +365,7 @@ int main(int argc, char *argv[]) {
         /*atualiza numero de inteiros por bloco conforme o numero de blocos que divide a sequencia */
         ints_per_block = ints_per_block * 2;
         //ultimo bloco fica com o que sobra mais os inteiros normalmente atribuidos
-        ints_in_last_block = n_sequencia - (ints_per_block * (n_blocks));
+        rest_of_ints = n_sequencia - (ints_per_block * (n_blocks));
         printf("\n \n \n \n \n \n \n \n \n \n \n \n \n ");
     }
 
