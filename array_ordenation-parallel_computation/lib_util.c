@@ -96,7 +96,7 @@ int number_of_process_created(int N) {
 
 void printArray(int *a, int N, char string[]) {
     int i;
-    printf("\nSequencia %s:\n", string);
+    printf("\n %s Sequencia:\n", string);
     for (i = 0; i < N; i++) {
         printf("%d ", a[i]);
     }
@@ -344,6 +344,8 @@ int * create_sub_array_from_array(int *array, int start, int end, int N) {
     }
     return a;
 }
+
+
 
 
 int * get_protocol_with_complement(int *a,char *complement_buffer, int size_of_original, int supposed_size){

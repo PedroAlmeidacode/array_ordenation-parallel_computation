@@ -32,9 +32,6 @@ int main(int argc, char *argv[]) {
     printf("PARENT PROCESS : array with %d integers, total of %d childs will be launched", n_sequencia, n_childs);
 
     char **protocols = (char **) malloc(n_protocols * sizeof(char *)); // guardara n_childs protocolos que sao as menagens que o pai vai receber de cada um dos filhos
-    char extra [n_childs][2048];
-    int extra_sizes[n_childs];
-    int i_extra =0; //ietra as as mensagens extra lidas no pai , enviadas do filho quando o protocolo inicial é dividido em mais um envio
 
     int *sequencia = new_int_array_substituition_exact_size(n_sequencia, sequencia_test,
                                                             1); //inicializa array seqeuncia com o seu tamnho exato
@@ -52,16 +49,14 @@ int main(int argc, char *argv[]) {
 
 
     int i_protocol = 0;//itera as mensagens lidas no pai, enviadas do filho
-    int last_pid = getpid();//variavel para casos exepcionais usada na leitura de protocolos pelo pai
 
     /*Enquanto o array nao estiver organizado
  o segundo ciclo renova-se, ou seja o i volta a ser 0 e o numero de
  filhos/blocos é recalculado */
     while (1) {
-        int i = 0, index_start = 0, index_end = -1;
-        int plus = 0;
+        int i = 0, index_start , index_end = -1;
+        int plus;
         //preserva o estado dos bounds pois casos a subsequencia seja subdividida para poder ser escrita para o pipe as variaveis bound vao ser alteradas
-        int index_start_duplicate=0,index_end_duplicate=0;
         childs_that_have_sent_protocol = 0;
         /* Descritor de ficheiros para as duas pontas do pipe*/
         int fd[2];
@@ -202,6 +197,8 @@ int main(int argc, char *argv[]) {
         char buf[4096];
         int start = 0, end = 0, childpid = 0, size_of_sub_sequencia = 0;
         int t = 0;
+        int * temp  = NULL;
+        int temp_size=0,supposed_size=0,temp_start = 0,temp_end = 0,temp_childpid = 0;
 
         //le protocolo do pipe dos filhos que terminarem
         while (readn(fd[0], buf, 4096) > 0) {
@@ -219,18 +216,30 @@ int main(int argc, char *argv[]) {
                     i_protocol++;
                     printf("protocolo lido\n");
                 }else {
-                    printf("\033[0;34m");
-                    printf("Recebido porcao de protocolo perdida\n");
-                    printf("%s",message);
-                    printf("\033[0m\n");
-                    sleep(1);
+                    //se entrou neste ciclo quer dizer que tem uma parte de protocolo para juntar
+                    if(temp_size != 0){ // quer dizer que guardou um protocolo que falta juntar uma porcao de protocolo
 
+                        int *final = get_protocol_with_complement(temp,message,temp_size,supposed_size);
 
+                        printf("final protcol supopposed size: %d , temp -size|%d| + message -size|%d|\n ",supposed_size,temp_size,supposed_size-temp_size);
+                        printf("Protocol rceeived formed together childpid: %d\n",temp_childpid);
+                        printArray(final, supposed_size, "Sub");
+
+                        int index_sub = 0;
+                        for (int b = temp_start; b <= temp_end; b++) { // coloca sub sequencia ordenada na sequencia original
+                            sequencia[b] = final[index_sub];
+                            index_sub++;
+                        }
+
+                        temp_start = 0,temp_end = 0,temp_childpid = 0,temp_size=0,supposed_size=0;
+                        free(temp);
+                        temp = NULL;
+                        free(final);
+                        final = NULL;
+                    }
                     message = strtok(NULL, "|"); //em caso de lixo passado pelo pipe
                 }
             }
-
-
 
 
             for (int j = i_protocol - t; j < i_protocol; j++) {
@@ -242,18 +251,20 @@ int main(int argc, char *argv[]) {
                     //se o protocolo nao for os suposto ou nao estiver completo nao o colocamos no sitio
                     // podendo assim remediar o problema desde que esta nao seja a ultima divisao da seuquencia
 
+                        temp_start = start,temp_end = end,temp_childpid = childpid,temp = sub,temp_size = size_of_sub_sequencia,supposed_size = end -start + 1;
+
                         printf("\033[0;34m");
-                        printf("protocolo [pid: %d] {%d-%d}; recebeu %d inteiros , perdeu %d inteiros\n", (int) childpid,start ,end,size_of_sub_sequencia,(end-start+1)-size_of_sub_sequencia );
+                        printf("\n\nprotocolo [pid: %d] {%d-%d}; recebeu %d inteiros , perdeu %d inteiros\n", (int) childpid,start ,end,size_of_sub_sequencia,(end-start+1)-size_of_sub_sequencia );
                         printf("index_start : %d, index_end: %d, child_pid: %d ,size received = %d, size_sended : %d",
                            start, end, childpid, size_of_sub_sequencia, end - start + 1);
-                        printArray(sub, size_of_sub_sequencia, "");
-                        printf("\033[0m");
-                        sleep(1);
+                        printArray(sub, size_of_sub_sequencia, "Sub");
+                        printf("\033[0m\n");
+
                 }
                 else {// se o tamanho da sequencia for o esperado colocamos a sequencia no sitio
                     printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
                            start, end, childpid, size_of_sub_sequencia, end - start + 1);
-                    printArray(sub, size_of_sub_sequencia, "");
+                    printArray(sub, size_of_sub_sequencia, "Sub");
 
                     int index_sub = 0;
                     for (int b = start; b <= end; b++) { // coloca sub sequencia ordenada na sequencia original
@@ -266,29 +277,7 @@ int main(int argc, char *argv[]) {
         }
 
 
-
-
-
-
-
-
-
-
-
-
         if ((close(fd[0])) < 0)perror("PARENT PROCESS: closing reading from pipe descriptor in parent process");
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         for (int j = 0; j < n_blocks; j++) {
@@ -303,20 +292,8 @@ int main(int argc, char *argv[]) {
         }
         start_point = n_pids; // atualiza o start point para que da proxima vez que esperar pelos filhos comece no id correto
 
-        printf("PARENT PROCESS: child info::  sinais enviados - %d , protocolos lidos - %d , protocolos por ler - %d\n",
-               childs_that_have_sent_protocol, t, n_blocks - t);
-
-
-
-
-
-
-
-
-
-
-
-
+        printf("PARENT PROCESS: child info::  sinais enviados : %d\n",
+               childs_that_have_sent_protocol);
 
 
         /*se tiver 1 na variavel n_blocks neste ponto do codigo significa
@@ -335,27 +312,6 @@ int main(int argc, char *argv[]) {
         }
 
         printArray(sequencia, n_sequencia, "\nordenada");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

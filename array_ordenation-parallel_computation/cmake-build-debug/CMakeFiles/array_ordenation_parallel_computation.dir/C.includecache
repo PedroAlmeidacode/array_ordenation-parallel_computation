@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/lib_util.c
+library.h
+/home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/library.h
+
 /home/pedro/Desktop/array_ordenation-parallel_computation/array_ordenation-parallel_computation/library.h
 time.h
 -

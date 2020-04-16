@@ -13,30 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ff37baf4-f559-40ed-b4d7-bdc60607a874" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib_util.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_util.o" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/library.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../file.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +99,7 @@
       <workItem from="1586858106457" duration="6643000" />
       <workItem from="1586874527359" duration="16563000" />
       <workItem from="1586970517838" duration="10380000" />
+      <workItem from="1587043239413" duration="5319000" />
     </task>
     <servers />
   </component>
@@ -164,26 +147,26 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.-1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1585697084807" />
-    <state width="2514" height="373" key="GridCell.Tab.0.bottom" timestamp="1586992975622">
+    <state width="2514" height="863" key="GridCell.Tab.0.bottom" timestamp="1587048544760">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763178" />
-    <state width="2514" height="373" key="GridCell.Tab.0.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586992975622" />
-    <state width="2514" height="373" key="GridCell.Tab.0.center" timestamp="1586992975621">
+    <state width="2514" height="863" key="GridCell.Tab.0.bottom/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1587048544760" />
+    <state width="2514" height="863" key="GridCell.Tab.0.center" timestamp="1587048544760">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763177" />
-    <state width="2514" height="373" key="GridCell.Tab.0.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586992975621" />
-    <state width="2514" height="373" key="GridCell.Tab.0.left" timestamp="1586992975621">
+    <state width="2514" height="863" key="GridCell.Tab.0.center/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1587048544760" />
+    <state width="2514" height="863" key="GridCell.Tab.0.left" timestamp="1587048544760">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763176" />
-    <state width="2514" height="373" key="GridCell.Tab.0.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586992975621" />
-    <state width="2514" height="373" key="GridCell.Tab.0.right" timestamp="1586992975621">
+    <state width="2514" height="863" key="GridCell.Tab.0.left/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1587048544760" />
+    <state width="2514" height="863" key="GridCell.Tab.0.right" timestamp="1587048544760">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1585697763177" />
-    <state width="2514" height="373" key="GridCell.Tab.0.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586992975621" />
+    <state width="2514" height="863" key="GridCell.Tab.0.right/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1587048544760" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585697079606">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -208,11 +191,11 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="1447" y="188" width="1022" height="737" key="SettingsEditor/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586874801375" />
-    <state width="799" height="526" key="XDebugger.FullValuePopup" timestamp="1586799810073">
+    <state width="799" height="526" key="XDebugger.FullValuePopup" timestamp="1587046368349">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state width="599" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1585675265378" />
-    <state width="799" height="526" key="XDebugger.FullValuePopup/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1586799810073" />
+    <state width="799" height="526" key="XDebugger.FullValuePopup/0.27.2560.1053/379.1080.1920.1080@0.27.2560.1053" timestamp="1587046368349" />
     <state x="1659" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1586858106722">
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
@@ -232,8 +215,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>243</line>
+          <line>252</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>204</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
