@@ -1,7 +1,7 @@
 #include "library.h"
 
 
-//126,14,10,6,146,9
+
 int get_index_end(int index_start, int ints_per_block, int n_blocks, int rest_of_ints, int n_sequencia, int i) {
     //se estiver no ultimo filho que reorganiza todos o array
     if (n_blocks == 1) return n_sequencia - 1;
@@ -47,9 +47,12 @@ int gettimeuseconds(long long *time_usec) {
 /**
   @brief gera um inteiro aleatoriamente/uniformemente no intervalo: val_min...val_max 
  */
+ /*
 int uniform(int val_min, int val_max) {
     return val_min + rand() % (val_max - val_min + 1);
 }
+
+
 
 /// @brief function to fill an array with integer random uniformly distributed values (returns -1 if error)
 int uniformArray(int *a, int N, int val_min, int val_max) {
@@ -59,7 +62,7 @@ int uniformArray(int *a, int N, int val_min, int val_max) {
     }
     return 0;
 }
-
+*/
 /**
  *  @brief int array dynamic managing
  *
@@ -73,15 +76,6 @@ int *newIntArray(int N) {
 
 void freeIntArray(int *v) {
     free(v);
-}
-
-int numberOfBlocksOfArray(int N, int ints_per_block) {
-    //se o numeros nao chegar ao numero minimo de inteiros por bloco apenas tera um bloco
-    if (N == ints_per_block)return 1;
-    // se a divisao nao der resto quer dizer que é uma divisao perfeita e todos os blocos terao o mesmo numero de inteiros
-    if ((N % ints_per_block) == 0)return (int) N / ints_per_block;
-    // se der resto diferente de 0 quer dizer que tem de ser feito mais um bloco com um numero de inteiros diferente dos outros blocos
-    return ((int) (N / ints_per_block)) + 1;
 }
 
 
@@ -103,6 +97,7 @@ void printArray(int *a, int N, char string[]) {
     printf("\n");
 }
 
+/*
 int binarySearch(int a[], int n, int key) {
     int lo = 0, hi = n - 1;
     while (lo <= hi) {
@@ -113,6 +108,7 @@ int binarySearch(int a[], int n, int key) {
     }
     return -1;
 }
+ */
 
 int writeInts(char *filename, int *intvec, int n) {
     FILE *fp;
@@ -206,8 +202,8 @@ int get_number_of_protocols(int ints_per_block, int rest_of_ints, int n_sequenci
 
     int x = ints_per_block;
     int n_protocols = 0;
-    int protcolo_por_bloco =0;
-    int protocolos_in_last_block = 0;
+    int protcolo_por_bloco;
+    int protocolos_in_last_block;
     int ints_in_last_block = ints_per_block + rest_of_ints;
     for (int l = 10; l !=0 ; ) {
         protcolo_por_bloco = ((x/MAX_SIZE_SUB)+1);
@@ -344,7 +340,6 @@ int * create_sub_array_from_array(int *array, int start, int end, int N) {
     }
     return a;
 }
-
 
 
 

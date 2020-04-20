@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/R4_Fase1.dir/main.c.o CMakeFiles/R4_Fase1.dir/child.c.o  -o R4_Fase1 

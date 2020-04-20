@@ -55,9 +55,9 @@ int main(int argc, char *argv[]) {
  filhos/blocos é recalculado */
     while (1) {
         int i = 0, index_start , index_end = -1;
-        int plus;
         //preserva o estado dos bounds pois casos a subsequencia seja subdividida para poder ser escrita para o pipe as variaveis bound vao ser alteradas
         childs_that_have_sent_protocol = 0;
+
         /* Descritor de ficheiros para as duas pontas do pipe*/
         int fd[2];
         /*Cria o pipe*/
@@ -74,7 +74,6 @@ int main(int argc, char *argv[]) {
         while (i < n_blocks) {
             index_start = index_end + 1;
             index_end = get_index_end(index_start, ints_per_block, n_blocks, rest_of_ints, n_sequencia, i);
-            plus = index_start;
 
             //criar filhos
             if ((pids[n_pids] = fork()) == -1) {
@@ -86,7 +85,7 @@ int main(int argc, char *argv[]) {
             if (pids[n_pids] == 0) {
                 /*___________________________________________________________________*
                 *_______________________PROCESSO_FILHO_______________________________*
-                * __________________________________________________________________*/
+                * ___________________________________________________________________*/
 
 
                 if ((close(fd[0])) < 0) {
@@ -99,7 +98,6 @@ int main(int argc, char *argv[]) {
                                                                  index_end - index_start + 1);
                 //ordena sub-array
                 mergesort_run(sub_sequencia, index_end - index_start + 1, 0, index_end - index_start);
-
 
 
                 /* escrever subsequencia para ficheiro*/
@@ -137,14 +135,14 @@ int main(int argc, char *argv[]) {
                     int *sub = create_sub_array_from_array(sub_sequencia, index_start_sub, index_end_sub,
                                                            size_sub);
 
-                    char *protocol = create_protocol(plus+index_end_sub, plus+index_start_sub, pid,
+                    char *protocol = create_protocol(index_start+index_end_sub, index_start+index_start_sub, pid,
                                                      sub); // cria o protocolo e coloca o dentro do apontador
 
                     freeIntArray(sub);
                     sub = NULL;
 
                     printf("\nCHILD PROCESS [sub_sequencia %d, parte %d]:\t pid : %d \t ppid: %d\t index_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size:%lu size sub_sequencia:%d]->",
-                           i + 1, k + 1, pid, getppid(),plus+ index_start_sub, plus+index_end_sub, size_sub ,
+                           i + 1, k + 1, pid, getppid(),index_start+ index_start_sub, index_start+index_end_sub, size_sub ,
                            strlen(protocol), index_end_sub - index_start_sub + 1);
                     for (int j = 0; j < strlen(protocol); j++) {
                         printf("%c", *(protocol + j));
@@ -195,8 +193,7 @@ int main(int argc, char *argv[]) {
 
 
         char buf[4096];
-        int start = 0, end = 0, childpid = 0, size_of_sub_sequencia = 0;
-        int t = 0;
+        int start = 0, end = 0, childpid = 0, size_of_sub_sequencia = 0, t;
         int * temp  = NULL;
         int temp_size=0,supposed_size=0,temp_start = 0,temp_end = 0,temp_childpid = 0;
 
@@ -310,10 +307,7 @@ int main(int argc, char *argv[]) {
             }
             exit(EXIT_SUCCESS);
         }
-
         printArray(sequencia, n_sequencia, "\nordenada");
-
-
 
         /*divide o novo array por blocos sendo a nova
         divisao metade dos blocos anterior*/
