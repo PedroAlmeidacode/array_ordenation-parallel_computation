@@ -50,10 +50,10 @@ int main(int argc, char **argv) {
 
     printf("\nCHILD.C [uds: %d pid: %d]:\tindex_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size sub_sequencia:%d]->",
            uds, pid, index_start, index_end, index_end - index_start, index_end - index_start + 1);
-    for (int j = 0; j < strlen(protocol); j++) {
+    /*for (int j = 0; j < strlen(protocol); j++) {
         printf("%c", *(protocol + j));
     }
-    printf("\n");
+    printf("\n");*/
 
     //escrve protocolo para main scoket
     if (writen(uds, protocol, strlen(protocol)) == -1) {

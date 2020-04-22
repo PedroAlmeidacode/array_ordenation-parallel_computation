@@ -12,38 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff37baf4-f559-40ed-b4d7-bdc60607a874" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../R4_Fase1/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/lib_util.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/array_ordenation_parallel_computation.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/array_ordenation_parallel_computation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_util.c" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib_util.o" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ordered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ordered.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/12.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../subsequencias/9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../subsequencias/9.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +101,8 @@
       <workItem from="1587159957551" duration="1404000" />
       <workItem from="1587307222308" duration="3368000" />
       <workItem from="1587383867354" duration="2752000" />
+      <workItem from="1587401795000" duration="3000" />
+      <workItem from="1587580729625" duration="17000" />
     </task>
     <servers />
   </component>

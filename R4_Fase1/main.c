@@ -94,20 +94,23 @@ int main(int argc, char *argv[]) {
         for (int k = 0; k < n_blocks; k++) { // cicla por numero de blocos
             start = 0, end = 0, childpid = 0, size_of_sub_sequencia = 0;
 
+            printf("\naceita filho numero %d\n",k+1);
             //accept new socket thta is in the listen queue
             if ((connfd = accept(listenfd, NULL, NULL)) == -1) {
                 perror("accepts error;");
                 continue;
             }
+
             //le protocolo dos sockets que enviarem
             while (readn(connfd, buf, BUF_SIZE) != 0) {
+
                 char *message = strtok(buf, "|"); // retira um protocolo de buff
                 char *protocol = (char *) malloc(strlen(message));// coloca o protocolo alocado
                 strcpy(protocol, message);
-
                 //retira informacao do protocolo para variaveis e sub sequencia para sub
                 int *sub = get_data_from_protocol(&start, &end, &childpid, protocol,
                                                   &size_of_sub_sequencia);
+
 
                 // se o tamanho da sequencia for o esperado colocamos a sequencia no sitio
                 printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
@@ -121,7 +124,6 @@ int main(int argc, char *argv[]) {
                 }
                 free(sub);
                 sub = NULL;
-                free(protocol);
                 protocol = NULL;
                 message = NULL;
             }

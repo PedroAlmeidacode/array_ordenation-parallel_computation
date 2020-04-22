@@ -223,8 +223,8 @@ int *get_data_from_protocol(int *sub_seq_index_start, int *sub_seq_index_end, in
                 {
                     if (sub == NULL)
                     {
-
                         *size_of_subsequencia = n;
+
                         int *sub_sequencia = newIntArray(n);//alloca com o tamanho real da sequencia e nao o que deveria ter
 
                         //iteracao para protocolos que foram lidos completos da pipe

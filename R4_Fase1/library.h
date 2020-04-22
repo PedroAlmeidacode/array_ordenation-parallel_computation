@@ -23,9 +23,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
-#define BUF_SIZE 6000                                                       // block transfer size
+#define BUF_SIZE 50000                                                      // block transfer size
 #define N_CHILDS 10
-#define N_MAX 9999
+#define N_MAX 20000
 
 int prepare_socket(struct sockaddr_un channel_srv, char *  socket_path, int listenq);
 
