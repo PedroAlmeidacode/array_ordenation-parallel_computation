@@ -10,13 +10,10 @@ int main(int argc, char *argv[]) {
 
     int *sequencia_test = newIntArray(
             N_MAX), n_sequencia, n_pids = 0;    /*inicializa dinamicamente sequencia de inteiros a ordenar com um tamanho definido por N_MAX*/
-    /*processo pai le path de *argv ,input do terminal*/
-    static char path[100];
-    printf("\nIntroduza o camimho do ficheiro:\n");
-    scanf("%99[^\n]%*c", path);
+
 
     /*pai le inteiros contidos no ficheiro e armazena no array*/
-    if ((n_sequencia = readInts(path, sequencia_test, N_MAX)) < 0) {
+    if ((n_sequencia = readInts(argv[1], sequencia_test, N_MAX)) < 0) {
         perror("Reading file");
         exit(EXIT_FAILURE);
     }
@@ -73,7 +70,7 @@ int main(int argc, char *argv[]) {
                 /*___________________________________________________________________*
                 *_______________________PROCESSO_FILHO_______________________________*
                 * ___________________________________________________________________*/
-                char *args[5] = {"child.out", path, index_start_char, index_end_char, NULL};
+                char *args[5] = {"child.out", argv[1], index_start_char, index_end_char, NULL};
 
                 execv("child.out", args);
                 perror("execv");

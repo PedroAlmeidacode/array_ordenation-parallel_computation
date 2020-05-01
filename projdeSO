@@ -1,0 +1,14 @@
+R3:
+gcc -c lib_util.c
+gcc -c main.c
+gcc -o main main.o lib_util.o -lpthread
+./main /home/pedro/Desktop/github_projects/array_ordenation-parallel_computation/teste.txt
+
+
+
+
+R4:
+gcc main.c -o main.out -lpthread  
+gcc child.c -o child.out -lpthread
+./main.out /home/pedro/Desktop/github_projects/array_ordenation-parallel_computation/file.txt
+
