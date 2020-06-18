@@ -13,14 +13,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
-#define _GNU_SOURCE             /* See feature_test_macros(7) */
 #include <fcntl.h>              /* Obtain O_* constant definitions */
 
 
 #define N_CHILDS 10
 #define N_MAX 9999
 #define BUF_SIZE 4096
-#define MAX_SIZE_SUB 200
+#define MAX_SIZE_SUB 400
 
 long long time_usec_init;
 long long time_usec_end1;

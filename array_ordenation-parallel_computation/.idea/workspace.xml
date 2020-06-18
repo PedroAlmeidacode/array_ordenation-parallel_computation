@@ -12,7 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff37baf4-f559-40ed-b4d7-bdc60607a874" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../R4_Fase1/child.c" beforeDir="false" afterPath="$PROJECT_DIR$/../R4_Fase1/child.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../R4_Fase1/child.out" beforeDir="false" afterPath="$PROJECT_DIR$/../R4_Fase1/child.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../R4_Fase1/lib_util.c" beforeDir="false" afterPath="$PROJECT_DIR$/../R4_Fase1/lib_util.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../R4_Fase1/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../R4_Fase1/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../R4_Fase1/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/../R4_Fase1/main.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib_util.o" beforeDir="false" afterPath="$PROJECT_DIR$/lib_util.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/library.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordered.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ordered.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +57,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
@@ -103,6 +115,7 @@
       <workItem from="1587383867354" duration="2752000" />
       <workItem from="1587401795000" duration="3000" />
       <workItem from="1587580729625" duration="17000" />
+      <workItem from="1592496297415" duration="315000" />
     </task>
     <servers />
   </component>

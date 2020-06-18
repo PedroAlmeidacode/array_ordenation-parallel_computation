@@ -48,8 +48,8 @@ int main(int argc, char **argv) {
     char *protocol = create_protocol(index_end, index_start, pid,
                                      sub_sequencia); // cria o protocolo e coloca o dentro do apontador
 
-    printf("\nCHILD.C [uds: %d pid: %d]:\tindex_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size sub_sequencia:%d]->",
-           uds, pid, index_start, index_end, index_end - index_start, index_end - index_start + 1);
+    //printf("\nCHILD.C [uds: %d pid: %d]:\tindex_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size sub_sequencia:%d]->",
+    //       uds, pid, index_start, index_end, index_end - index_start, index_end - index_start + 1);
     /*for (int j = 0; j < strlen(protocol); j++) {
         printf("%c", *(protocol + j));
     }

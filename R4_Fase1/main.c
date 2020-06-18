@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
         for (int k = 0; k < n_blocks; k++) { // cicla por numero de blocos
             start = 0, end = 0, childpid = 0, size_of_sub_sequencia = 0;
 
-            printf("\naceita filho numero %d\n",k+1);
+            //printf("\naceita filho numero %d\n",k+1);
             //accept new socket thta is in the listen queue
             if ((connfd = accept(listenfd, NULL, NULL)) == -1) {
                 perror("accepts error;");
@@ -110,9 +110,9 @@ int main(int argc, char *argv[]) {
 
 
                 // se o tamanho da sequencia for o esperado colocamos a sequencia no sitio
-                printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
-                       start, end, childpid, size_of_sub_sequencia, end - start + 1);
-                printArray(sub, size_of_sub_sequencia, "Sub");
+                //printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
+                //       start, end, childpid, size_of_sub_sequencia, end - start + 1);
+                //printArray(sub, size_of_sub_sequencia, "Sub");
 
                 int index_sub = 0;
                 for (int b = start; b <= end; b++) { // coloca sub sequencia ordenada na sequencia original
@@ -131,7 +131,10 @@ int main(int argc, char *argv[]) {
             printArray(sequencia, n_sequencia, "ordenada");
             exit(EXIT_SUCCESS);
         }
-        printArray(sequencia, n_sequencia, "\nordenada");
+        // atauliza o ficheiro com a nova ordenacao pois a child recebe o ficheiro e nao a sequencia (string)
+        writeInts(argv[1], sequencia, n_sequencia);
+
+        //printArray(sequencia, n_sequencia, "\nordenada");
         /*divide o novo array por blocos sendo a nova
         divisao metade dos blocos anterior*/
         n_blocks = n_blocks / 2;
@@ -139,7 +142,7 @@ int main(int argc, char *argv[]) {
         ints_per_block = ints_per_block * 2;
         //ultimo bloco fica com o que sobra mais os inteiros normalmente atribuidos
         rest_of_ints = n_sequencia - (ints_per_block * (n_blocks));
-        printf("\n \n \n \n \n \n \n \n \n \n \n \n \n ");
+        printf("\n \n \n \n \n \n");
     }
 }
 

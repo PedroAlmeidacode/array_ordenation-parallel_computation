@@ -138,13 +138,13 @@ int main(int argc, char *argv[]) {
                     freeIntArray(sub);
                     sub = NULL;
 
-                    printf("\nCHILD PROCESS [sub_sequencia %d, parte %d]:\t pid : %d \t ppid: %d\t index_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size:%lu size sub_sequencia:%d]->",
-                           i + 1, k + 1, pid, getppid(),index_start+ index_start_sub, index_start+index_end_sub, size_sub ,
-                           strlen(protocol), index_end_sub - index_start_sub + 1);
-                    for (int j = 0; j < strlen(protocol); j++) {
-                        printf("%c", *(protocol + j));
-                    }
-                    printf("\n");
+                    //printf("\nCHILD PROCESS [sub_sequencia %d, parte %d]:\t pid : %d \t ppid: %d\t index_start : %d index_end : %d ints in block : %d\n Protocolo enviado [size:%lu size sub_sequencia:%d]->",
+                    //       i + 1, k + 1, pid, getppid(),index_start+ index_start_sub, index_start+index_end_sub, size_sub ,
+                    //       strlen(protocol), index_end_sub - index_start_sub + 1);
+                    //for (int j = 0; j < strlen(protocol); j++) {
+                    //    printf("%c", *(protocol + j));
+                    //}
+                    //printf("\n");
 
 
 
@@ -256,9 +256,9 @@ int main(int argc, char *argv[]) {
 
                 }
                 else {// se o tamanho da sequencia for o esperado colocamos a sequencia no sitio
-                    printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
-                           start, end, childpid, size_of_sub_sequencia, end - start + 1);
-                    printArray(sub, size_of_sub_sequencia, "Sub");
+                    //printf("\nPARENT PROCESS: Recebido protocolo-> index_start : %d, index_end: %d, child_pid: %d ,size_of_sub_sequencia = %d, size_sended : %d",
+                    //       start, end, childpid, size_of_sub_sequencia, end - start + 1);
+                    //printArray(sub, size_of_sub_sequencia, "Sub");
 
                     int index_sub = 0;
                     for (int b = start; b <= end; b++) { // coloca sub sequencia ordenada na sequencia original
@@ -304,7 +304,7 @@ int main(int argc, char *argv[]) {
             }
             exit(EXIT_SUCCESS);
         }
-        printArray(sequencia, n_sequencia, "\nordenada");
+        //printArray(sequencia, n_sequencia, "\nordenada");
 
         /*divide o novo array por blocos sendo a nova
         divisao metade dos blocos anterior*/

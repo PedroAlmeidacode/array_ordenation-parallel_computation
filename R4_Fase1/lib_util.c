@@ -53,6 +53,19 @@ void freeIntArray(int *v) {
 }
 
 
+int writeInts(char *filename, int *intvec, int n) {
+    FILE *fp;
+    int i = 0;
+    fp = fopen(filename, "w");
+    if (fp != NULL) {
+        while (i < n)
+            fprintf(fp, "%d\n", intvec[i++]);
+        fclose(fp);
+    } else return -1; // erro na leitura do ficheiro
+    return 0;
+}
+
+
 int number_of_process_created(int N) {
     int n_blocks = N;
     while (N != 1) {
